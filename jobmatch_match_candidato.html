@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobMatch - Match per Candidati</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    let aziende = [
+      {
+        nome: "GreenTech Solutions",
+        settore: "Tecnologia Sostenibile",
+        posizione: "Analista Dati Ambientali",
+        valori: "Innovazione, Sostenibilità, Trasparenza",
+        benefit: "Smart working, Buoni pasto, Formazione continua",
+        remoto: "Sì",
+        affinità: "92%"
+      },
+      {
+        nome: "HealthWay S.p.A.",
+        settore: "Sanità digitale",
+        posizione: "UX/UI Designer",
+        valori: "Accessibilità, Inclusione, Precisione",
+        benefit: "Welfare sanitario, Telelavoro, Orario flessibile",
+        remoto: "Parzialmente",
+        affinità: "89%"
+      },
+      {
+        nome: "UpSkill Hub",
+        settore: "Formazione & HR Tech",
+        posizione: "Learning Content Specialist",
+        valori: "Crescita, Collaborazione, Merito",
+        benefit: "Ticket, Formazione interna, Bonus",
+        remoto: "No",
+        affinità: "86%"
+      }
+    ];
+    let index = 0;
+    function mostraAzienda() {
+      const az = aziende[index];
+      document.getElementById("nome").innerText = az.nome;
+      document.getElementById("settore").innerText = az.settore;
+      document.getElementById("posizione").innerText = az.posizione;
+      document.getElementById("valori").innerText = az.valori;
+      document.getElementById("benefit").innerText = az.benefit;
+      document.getElementById("remoto").innerText = az.remoto;
+      document.getElementById("affinita").innerText = az.affinità;
+    }
+    function swipeCandidato(azione) {
+      if (azione === 'match') {
+        alert("Hai fatto match con " + aziende[index].nome + "!");
+      }
+      index = (index + 1) % aziende.length;
+      mostraAzienda();
+    }
+    window.onload = mostraAzienda;
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <header class="bg-white shadow p-6 px-10 flex justify-between items-center">
+    <div class="text-2xl font-extrabold text-green-700">JobMatch</div>
+    <a href="JobMatch_Landing_Completa_Originale.html" class="text-sm text-green-700 hover:underline">Torna alla Home</a>
+  </header>
+
+  <main class="flex flex-col items-center justify-center h-[80vh] px-4">
+    <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md text-center">
+      <h2 class="text-2xl font-bold text-green-700 mb-2" id="nome"></h2>
+      <p><strong>Settore:</strong> <span id="settore"></span></p>
+      <p><strong>Posizione aperta:</strong> <span id="posizione"></span></p>
+      <p><strong>Valori aziendali:</strong> <span id="valori"></span></p>
+      <p><strong>Benefit:</strong> <span id="benefit"></span></p>
+      <p><strong>Remoto:</strong> <span id="remoto"></span></p>
+      <p class="mt-2"><strong>Affinità:</strong> <span id="affinita"></span></p>
+
+      <div class="mt-6 flex justify-around">
+        <button onclick="swipeCandidato('skip')" class="bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600">❌ Salta</button>
+        <button onclick="swipeCandidato('match')" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700">✅ Match</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t text-center text-xs text-gray-500 py-6">
+    © 2025 JobMatch · Simulazione Match per Candidati
+  </footer>
+</body>
+</html>
