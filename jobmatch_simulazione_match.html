@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobMatch - Simulazione Match</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script>
+    let profili = [
+      { nome: "Giulia R.", ruolo: "Data Analyst", competenze: "Python, SQL, Tableau", affinità: "91%" },
+      { nome: "Luca F.", ruolo: "Front-end Developer", competenze: "React, HTML, CSS", affinità: "88%" },
+      { nome: "Elisa B.", ruolo: "HR Specialist", competenze: "Recruiting, Onboarding", affinità: "85%" }
+    ];
+    let index = 0;
+    function mostraProfilo() {
+      const profilo = profili[index];
+      document.getElementById("nome").innerText = profilo.nome;
+      document.getElementById("ruolo").innerText = profilo.ruolo;
+      document.getElementById("competenze").innerText = profilo.competenze;
+      document.getElementById("affinita").innerText = profilo.affinità;
+    }
+    function swipe(azione) {
+      if (azione === 'match') {
+        alert("Hai fatto match con " + profili[index].nome + "!");
+      }
+      index = (index + 1) % profili.length;
+      mostraProfilo();
+    }
+    window.onload = mostraProfilo;
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <header class="bg-white shadow p-6 px-10 flex justify-between items-center">
+    <div class="text-2xl font-extrabold text-green-700">JobMatch</div>
+    <a href="JobMatch_Landing_Finale_Collegata_Form.html" class="text-sm text-green-700 hover:underline">Torna alla Home</a>
+  </header>
+  <main class="flex flex-col items-center justify-center h-[80vh] px-4">
+    <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md text-center">
+      <h2 class="text-2xl font-bold text-green-700 mb-2" id="nome"></h2>
+      <p class="text-gray-600" id="ruolo"></p>
+      <p class="mt-2"><strong>Competenze:</strong> <span id="competenze"></span></p>
+      <p><strong>Affinità:</strong> <span id="affinita"></span></p>
+      <div class="mt-6 flex justify-around">
+        <button onclick="swipe('skip')" class="bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600">❌ Salta</button>
+        <button onclick="swipe('match')" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700">✅ Match</button>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-white border-t text-center text-xs text-gray-500 py-6">
+    © 2025 JobMatch · Simulazione Match demo
+  </footer>
+</body>
+</html>
