@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobMatch - Landing Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <header class="bg-white shadow p-6 flex justify-between items-center px-10">
+    <div class="text-2xl font-extrabold text-green-700">JobMatch</div>
+    <nav class="space-x-6 text-sm text-gray-700">
+      <a href="#" class="hover:underline">Per candidati</a>
+      <a href="#" class="hover:underline">Per aziende</a>
+      <a href="contatti.html" class="hover:underline">Contattaci</a>
+    </nav>
+  </header>
+
+  <section class="bg-gradient-to-r from-green-700 to-emerald-700 text-white py-20 text-center px-4">
+    <h1 class="text-5xl font-bold mb-4">Il lavoro giusto al primo match</h1>
+    <p class="text-lg">JobMatch ti connette con aziende (o candidati) compatibili davvero:<br> profili anonimi, matching smart, selezione semplificata.</p>
+    <div class="mt-8 flex flex-col md:flex-row justify-center gap-4">
+      <a href="profilo_candidato.html" class="bg-white text-green-800 font-semibold px-6 py-3 rounded-full shadow hover:bg-green-100 transition">Cerca lavoro</a>
+      <a href="jobmatch_dashboard_aziende.html" class="bg-white text-green-900 font-semibold px-6 py-3 rounded-full shadow hover:bg-green-100 transition">Trova talenti</a>
+      <a href="jobmatch_simulazione_match.html" class="bg-white text-green-900 font-semibold px-6 py-3 rounded-full shadow hover:bg-green-100 transition">Simula Match</a>
+    </div>
+  </section>
+
+  <section class="py-16 px-4 bg-gray-100 grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+    <div class="bg-white p-6 rounded-xl shadow">
+      <h3 class="text-xl font-bold text-green-700 mb-2">👤 Per i candidati</h3>
+      <p>Crea il tuo profilo anonimo in pochi click. Niente CV: solo ciò che conta davvero. Ottieni feedback, migliora e ricevi offerte compatibili con il tuo stile.</p>
+      <a href="profilo_candidato.html" class="inline-block mt-4 bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800">Inizia ora</a>
+    </div>
+    <div class="bg-white p-6 rounded-xl shadow">
+      <h3 class="text-xl font-bold text-blue-900 mb-2">🏢 Per le aziende</h3>
+      <p>Scopri solo candidati compatibili con i valori e le competenze richieste. Profilazione automatica, dati verificati, attivazione istantanea.</p>
+      <a href="jobmatch_dashboard_aziende.html" class="inline-block mt-4 bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700">Scopri come funziona</a>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 text-center px-4">
+    <h3 class="text-xl font-bold text-green-700 mb-2">🚀 Prova JobMatch in anteprima</h3>
+    <p class="mb-6">Lascia la tua email per ricevere un accesso prioritario e testare la demo MVP.</p>
+    <input type="email" placeholder="La tua email" class="px-4 py-2 rounded border w-full max-w-md" />
+  </section>
+
+  <section class="text-center text-sm text-gray-600 italic py-8 px-4">
+    <p>"Il tuo profilo ha il 78% di affinità con 3 aziende attive in questo momento."</p>
+  </section>
+
+  <footer class="bg-white border-t text-center text-xs text-gray-500 py-6">
+    © 2025 JobMatch · MVP demo · Progetto in fase di validazione
+  </footer>
+</body>
+</html>
